@@ -1,6 +1,6 @@
 # E-Commerce-Website
 
-<details open>
+<details>
 <summary><span style="font-size: 20px;"> My Backend Setup </span></summary>
 <br>
 
