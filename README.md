@@ -1,7 +1,7 @@
 # E-Commerce-Website
 
 <details>
-<summary><span style="font-size: 20px;"> My Backend Setup </span></summary>
+<summary><span style="font-size: 20px;"> Backend Setup </span></summary>
 <br>
 
 > **Open terminal for initialization**
@@ -11,7 +11,7 @@ cd backend
 
 npm init
 
-npm i express mongoose bcrypt cloudinary cookie-parser cors dotenv jsonwebtoken
+npm i express mongoose bcrypt cloudinary cookie-parser cors dotenv jsonwebtoken mongoose-aggregate-paginate-v2 multer
 
 npm i -D nodemon
 
@@ -58,5 +58,15 @@ touch .env .prettierrc .prettierignore
   "trailingComma": "es5"
 }
 ```
+
+</details>
+
+<details>
+<summary><span style="font-size: 20px;"> Database and App Setup </span></summary>
+<br>
+
+1. **Start with db/index.js**
+2. **Use connectDB in src/index.js**
+3. **Create src/app.js**
 
 </details>
