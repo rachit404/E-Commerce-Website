@@ -11,6 +11,10 @@ export const sendEmail = async ({ to, subject, text, html }) => {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      connectionTimeout: 30000, // 30 seconds connection timeout
+      greetingTimeout: 10000,
+      logger: true, // Enable debugging logs
+      debug: true,
     });
 
     const info = await transporter.sendMail({

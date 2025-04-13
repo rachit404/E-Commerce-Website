@@ -4,3 +4,4 @@ const asyncHandler = (requestHandler) => {
     //* read more
   };
 };
+export { asyncHandler };
