@@ -66,6 +66,12 @@ const userSchema = new Schema(
         ref: "Course",
       },
     ],
+    //? email verification
+    emailVerificationToken: String,
+    emailVerificationTokenExpires: Date,
+    isEmailVerified: { type: Boolean, default: false },
+    passwordResetToken: String,
+    passwordResetExpires: Date,
   },
   {
     timestamps: true,
