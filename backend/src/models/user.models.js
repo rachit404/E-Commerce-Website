@@ -26,10 +26,12 @@ const userSchema = new Schema(
       index: true,
     },
     phone: {
-      type: Number,
+      type: String,
       required: true,
       unique: true,
+      trim: true,
       index: true,
+      match: /^[0-9]{10}$/, // optional regex for validation
     },
     profilePic: {
       type: String, // Cloudinary image URL
