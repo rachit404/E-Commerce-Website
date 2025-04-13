@@ -55,13 +55,13 @@ const userSchema = new Schema(
     orders: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Product",
+        ref: "Course",
       },
     ],
     cart: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Product",
+        ref: "Course",
       },
     ],
   },
