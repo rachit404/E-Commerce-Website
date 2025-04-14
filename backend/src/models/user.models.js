@@ -27,18 +27,24 @@ const userSchema = new Schema(
     },
     phone: {
       type: String,
-      required: true,
+      // required: true,
       unique: true,
       trim: true,
       index: true,
       match: /^[0-9]{10}$/, // optional regex for validation
     },
-    profilePic: {
-      type: String, // Cloudinary image URL
+    role: {
+      type: String,
+      enum: ["admin", "buyer", "seller"],
+      required: true,
+      default: "buyer",
     },
     password: {
       type: String,
       required: [true, "Password is required"],
+    },
+    profilePic: {
+      type: String, // Cloudinary image URL
     },
     refreshToken: {
       type: String,
@@ -48,11 +54,6 @@ const userSchema = new Schema(
     },
     resetTokenExpire: {
       type: Date,
-    },
-    role: {
-      type: String,
-      enum: ["admin", "buyer", "seller"],
-      default: "buyer",
     },
     orders: [
       {
