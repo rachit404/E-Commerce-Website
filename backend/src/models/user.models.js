@@ -131,4 +131,21 @@ userSchema.methods.generateResetToken = function () {
   );
 };
 
+userSchema.methods.generateEmailVerificationToken = function () {
+  const token = jwt.sign(
+    {
+      _id: this._id,
+      email: this.email,
+    },
+    process.env.EMAIL_VERIFICATION_TOKEN_SECRET,
+    {
+      expiresIn: process.env.EMAIL_VERIFICATION_TOKEN_EXPIRY || "15m",
+    }
+  );
+
+  this.emailVerificationToken = token;
+  this.emailVerificationTokenExpires = Date.now() + 15 * 60 * 1000; // 15 minutes
+  return token;
+};
+
 export const User = mongoose.model("User", userSchema);
